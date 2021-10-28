@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const PageError = () => (
-  1
+  <div>
+    PageError
+  </div>
 );
 
 export default PageError;

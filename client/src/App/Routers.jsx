@@ -1,15 +1,14 @@
 import React from 'react';
-import { Router, Switch, Route, Redirect } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 
 import PageError from '../components/PageError';
 
-export const Routes = () => (
-  <Router history={history}>
+const Routes = () => (
+  <Router>
     <Switch>
-      <Redirect exact from="/" to="/project" />
-      <Route path="/authenticate" component={} />
-      <Route path="/project" component={} />
       <Route component={PageError} />
     </Switch>
   </Router>
 );
+
+export default Routes;
