@@ -4,7 +4,7 @@
 
 # u!Support
 [![Trello](https://img.shields.io/badge/Kanban-Trello-blue)](https://trello.com/b/JeoW7mcJ/ticket-support)
-[![Mock-up](https://img.shields.io/badge/Deisgn-Figma-blueviolet)](https://trello.com/b/JeoW7mcJ/ticket-support)
+[![Mock-up](https://img.shields.io/badge/Deisgn-Figma-blueviolet)](https://www.figma.com/community/file/1035478821080046624/u!Support-Frontend-mock-ups)
 
 The source of [u!Support](https://github.com/P2LOVE/saas-vk-ticket-support) service that can receive and manage support tickets from your clients through [VK](https://vk.com/).
 
@@ -37,4 +37,4 @@ Please note that **only!** ways to contribute, other work can result to wasted e
 
 ## Licence
 
-u!Support is GNU APGLv3. Check an [licence](LICENCE) file itself or [click here to TLDR explanation](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)).
+u!Support is GNU APGLv3. Check an [licence](LICENSE) file itself or [click here to TLDR explanation](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)).
