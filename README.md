@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="200px" src="misc/usupport.svg">
+    <img width="200px" src="client/src/assets/usupport.svg">
 </p>
 
 # u!Support
