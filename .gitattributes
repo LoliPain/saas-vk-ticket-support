@@ -1,0 +1,8 @@
+# airbnb lint satisfy
+client/*.js text eol=lf
+client/*.jsx text eol=lf
+
+# pep 103 satisfy
+backend/*.py text
+backend/*.txt text eol=crlf
+

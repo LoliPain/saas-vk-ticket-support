@@ -1,0 +1,9 @@
+# exclude external modules
+**/node_modules
+
+# exclude production
+client/dist
+
+# exclude temp
+*.swp
+*.swo
