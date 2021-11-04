@@ -10,6 +10,9 @@ module.exports = {
     path: path.join(__dirname, "/dist"),
     filename: "build.js"
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
