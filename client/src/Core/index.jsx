@@ -1,5 +1,5 @@
 import React from 'react';
-import { authTyping } from './store/auth';
+import { authTyping } from '../App/store/auth';
 
 const Core = ({ authData }) => {
   if (authData) {
