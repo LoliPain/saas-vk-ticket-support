@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledPicWrapper, StyledPic } from './Styles';
-import DefaultUser from './User.png';
+import DefaultUser from '../../assets/User.png';
 
-export function UserPic({ userUrl }) {
+export function UserPic({ userUrl, className }) {
   if (userUrl) {
     return (
-      <StyledPicWrapper>
+      <StyledPicWrapper className={className}>
         <StyledPic src={userUrl} />
       </StyledPicWrapper>
     );
   }
   return (
-    <StyledPicWrapper>
+    <StyledPicWrapper className={className}>
       <StyledPic src={DefaultUser} />
     </StyledPicWrapper>
   );
@@ -26,14 +26,21 @@ export function MinimalUserPic({ userUrl, size }) {
 }
 
 UserPic.propTypes = {
-  userUrl: PropTypes.string.isRequired,
+  userUrl: PropTypes.string,
+  className: PropTypes.string,
+};
+
+UserPic.defaultProps = {
+  userUrl: DefaultUser,
+  className: '',
 };
 
 MinimalUserPic.propTypes = {
-  userUrl: PropTypes.string.isRequired,
+  userUrl: PropTypes.string,
   size: PropTypes.string,
 };
 
 MinimalUserPic.defaultProps = {
   size: '0.5',
+  userUrl: DefaultUser,
 };

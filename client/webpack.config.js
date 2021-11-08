@@ -27,9 +27,10 @@ module.exports = {
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
+        exclude: path.resolve(__dirname, "src/assets"),
       },
       {
-        test: /\.(jpe?g|png|gif)$/,
+        test: /\.(jpe?g|png|gif|svg)$/,
         use: [
           {
             loader: 'url-loader',
@@ -37,7 +38,8 @@ module.exports = {
               limit: 10000,
               name: "assets/[hash].[ext]"
             }
-          }]
+          }],
+        include: path.resolve(__dirname, "src/assets"),
       },
     ]
   },

@@ -1,11 +1,12 @@
 import React from 'react';
 import { authTyping } from '../App/store/auth';
+import GCPanel from './GCPanel';
 
 const Core = ({ authData }) => {
-  if (authData) {
-    return <div>Authed</div>;
+  if (authData.token) {
+    return <GCPanel userData={authData.data} userLogged />;
   }
-  return <div>Not authed</div>;
+  return <GCPanel userData={authData.data} />;
 };
 
 Core.propTypes = {

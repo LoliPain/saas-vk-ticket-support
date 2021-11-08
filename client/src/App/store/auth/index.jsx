@@ -7,7 +7,7 @@ export const authTyping = (
     token: PropTypes.string,
     data: PropTypes.shape({
       fullName: PropTypes.string,
-      userGroups: PropTypes.arrayOf(PropTypes.number),
+      userGroups: PropTypes.arrayOf(PropTypes.object),
     }).isRequired,
   })
 );

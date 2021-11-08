@@ -22,7 +22,9 @@ const Routes = () => {
   return (
     <Router history={history}>
       <Switch>
-        <Route exact path="/preview">{authData === emptyAuthData ? <Core /> : <Redirect to="/" />}</Route>
+        <Route exact path="/preview">
+          {authData === emptyAuthData ? <Core authData={emptyAuthData} /> : <Redirect to="/" />}
+        </Route>
         <Index authData={authData} />
         <Route path="/sometimessomethinggoeswrong" component={PageError} />
         <Redirect to="/sometimessomethinggoeswrong" />

@@ -8,6 +8,7 @@ const DesignBased = {
   counterSize: 10,
   counterDiv: 16,
   errorSize: 6,
+  margin: 10,
 };
 
 export const StyledGroupWrapper = styled.div`
@@ -21,15 +22,18 @@ export const StyledGroupWrapper = styled.div`
   border: 0.5px solid ${color.medium};
   width: ${DesignBased.width}px;
   height: ${DesignBased.height}px;
+  margin-bottom: ${DesignBased.margin}px;
   @media only screen and ${minSize.laptop}{
     width: ${DesignBased.width / (sizeBreakpoints.design / sizeBreakpoints.laptop)}px;
     height: ${DesignBased.height / (sizeBreakpoints.design / sizeBreakpoints.laptop)}px;
     font-size: ${DesignBased.nameSize / (sizeBreakpoints.design / sizeBreakpoints.laptop)}px;
+    margin-bottom: ${DesignBased.margin / (sizeBreakpoints.design / sizeBreakpoints.laptop)}px;
   }
   @media only screen and ${minSize.desktop}{
     width: ${DesignBased.width / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
     height: ${DesignBased.height / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
     font-size: ${DesignBased.nameSize / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
+    margin-bottom: ${DesignBased.margin / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
     border-radius: 6px;
   }
   background-color: ${(props) => (props.selected ? color.light : color.white)};
