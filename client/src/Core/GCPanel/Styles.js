@@ -239,6 +239,9 @@ export const StyledGCPanelFooterElement = styled.a`
     font-size: ${DesignBased.footer.font / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
     margin-bottom: ${DesignBased.footer.margin / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
   }
+  :link {
+    color: black;
+  }
   :visited {
     color: black;
   }
