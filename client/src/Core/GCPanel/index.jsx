@@ -20,7 +20,7 @@ import { emptyAuthData } from '../../App/store/auth';
 import { supportLink, sourceCodeLink } from '../../App/global';
 import Group from '../../components/Group';
 
-const openUserModal = ({ mode }) => (mode /* TODO open login/logout modal */);
+const openUserModal = (mode) => (mode /* TODO open login/logout modal */);
 
 const User = ({
   userPicUrl, fullName, userStatusString, userLogged,
@@ -32,8 +32,8 @@ const User = ({
     userStatusStringLoc = 'Войдите чтобы воспользоваться сервисом';
   }
   return (
-    <StyledGCPanelUser onClick={() => openUserModal(userLogged)}>
-      <StyledGCPanelUserPic userUrl={userPicUrl} />
+    <StyledGCPanelUser>
+      <StyledGCPanelUserPic changeAuth={() => openUserModal(userLogged)} userUrl={userPicUrl} />
       <StyledGCPanelUserData>
         <StyledGCPanelUserName>
           {fullNameLoc}
