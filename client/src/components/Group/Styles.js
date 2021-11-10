@@ -37,6 +37,10 @@ export const StyledGroupWrapper = styled.div`
     border-radius: 6px;
   }
   background-color: ${(props) => (props.selected ? color.light : color.white)};
+  :hover{
+    cursor: ${(props) => (!props.selected ? 'pointer' : null)};
+    background-color: ${(props) => (!props.selected ? color.light : null)};
+  }
 `;
 
 export const StyledGroupCounter = styled.div`

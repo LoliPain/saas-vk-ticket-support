@@ -57,7 +57,7 @@ function statusSet(countString) {
   return 'rejected';
 }
 
-const Groups = ({ userGroups }) => {
+const Groups = ({ userGroups, setSelect, selected }) => {
   const groupsComponent = [];
   userGroups.forEach(
     (group) => groupsComponent.push(
@@ -65,7 +65,10 @@ const Groups = ({ userGroups }) => {
         key={group.groupName}
         groupName={group.groupName}
         status={statusSet(group.count)}
-        count={group.count}
+        count={!Number.isNaN(parseInt(group.count, 10)) ? group.count : '!'}
+        selected={selected === group.groupName}
+        select={() => setSelect(group.groupName)}
+        errorDesc={Number.isNaN(parseInt(group.count, 10)) ? group.count : ''}
       />,
     ),
   );
@@ -108,14 +111,14 @@ const Groups = ({ userGroups }) => {
 };
 
 const GCPanel = ({
-  userData, userPicUrl, userStatus, userLogged,
+  userData, userPicUrl, userStatus, userLogged, groupSelection,
 }) => {
   const { fullName, userGroups } = userData;
+  const [minimized, toggleMinimize] = useState(false);
   let userStatusString = 'Подписка неактивна';
   if (userStatus) {
     userStatusString = `Подписка активна до ${userStatus}`;
   }
-  const [minimized, toggleMinimize] = useState(false);
   const minimize = () => (toggleMinimize(!minimized));
   return (
     <StyledGCPanelWrapper minimized={minimized}>
@@ -128,7 +131,11 @@ const GCPanel = ({
             userPicUrl={userPicUrl}
             fullName={fullName}
           />
-          <Groups userGroups={userGroups} />
+          <Groups
+            userGroups={userGroups}
+            setSelect={groupSelection.setSelect}
+            selected={groupSelection.selected}
+          />
           <StyledGCPanelFooter>
             <StyledGCPanelFooterElement target="_blank" rel="noopener noreferrer" href={supportLink}>
               Помощь
@@ -154,6 +161,10 @@ GCPanel.propTypes = {
   userPicUrl: PropTypes.string,
   userStatus: PropTypes.string,
   userLogged: PropTypes.bool,
+  groupSelection: PropTypes.shape({
+    selected: PropTypes.string,
+    setSelect: PropTypes.func,
+  }).isRequired,
 };
 
 GCPanel.defaultProps = {
@@ -165,6 +176,8 @@ GCPanel.defaultProps = {
 
 Groups.propTypes = {
   userGroups: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setSelect: PropTypes.func.isRequired,
+  selected: PropTypes.string.isRequired,
 };
 
 User.propTypes = {

@@ -7,9 +7,9 @@ import {
 import Status from '../Status';
 
 const Group = ({
-  status, count, selected, groupName, errorDesc,
+  status, count, selected, groupName, errorDesc, select,
 }) => (
-  <StyledGroupWrapper selected={+selected}>
+  <StyledGroupWrapper selected={+selected} onClick={select}>
     <Status status={status} />
     <StyledGroupCounter>
       {count}
@@ -26,6 +26,7 @@ Group.propTypes = {
   selected: PropTypes.bool,
   groupName: PropTypes.string,
   errorDesc: PropTypes.string,
+  select: PropTypes.func.isRequired,
 };
 
 Group.defaultProps = {
