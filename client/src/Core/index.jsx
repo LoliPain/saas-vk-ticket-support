@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 import { authTyping } from '../App/store/auth';
 import GCPanel from './GCPanel';
 import LogoutModal from './LogoutModal';
+import GroupModal from './GroupModal';
+import AuthModal from './AuthModal';
 
 const Modal = ({ instance, modalControl, group }) => {
   switch (instance) {
+    case 'auth':
+      return <AuthModal modalControl={modalControl} />;
     case 'logout':
       return <LogoutModal modalControl={modalControl} />;
+    case 'newGroup':
+      return <GroupModal modalControl={modalControl} />;
+    case 'changeGroup':
+      return <GroupModal modalControl={modalControl} group={group} />;
     default:
       return null;
   }

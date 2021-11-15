@@ -69,6 +69,7 @@ const Groups = (
     setSelect,
     selected,
     modalControl,
+    userLogged,
   },
 ) => {
   const groupsComponent = [];
@@ -114,7 +115,7 @@ const Groups = (
         <StyledGCPanelAbsWrapper>
           <StyledGCPanelStepper
             isMinimal
-            increase={() => modalControl('newGroup')}
+            increase={() => (userLogged ? modalControl('newGroup') : modalControl('auth'))}
           />
         </StyledGCPanelAbsWrapper>
         <StyledGCPanelEmptyTitle>
@@ -163,6 +164,7 @@ const GCPanel = (
             setSelect={groupSelection.setSelect}
             selected={groupSelection.selected}
             modalControl={modalControl}
+            userLogged={userLogged}
           />
           <StyledGCPanelFooter>
             <StyledGCPanelFooterElement target="_blank" rel="noopener noreferrer" href={supportLink}>
@@ -206,6 +208,7 @@ Groups.propTypes = {
   setSelect: PropTypes.func.isRequired,
   selected: PropTypes.string.isRequired,
   modalControl: PropTypes.func.isRequired,
+  userLogged: PropTypes.bool.isRequired,
 };
 
 User.propTypes = {
