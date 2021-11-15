@@ -1,27 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyledButtons from './Styles';
-import { color } from '../../assets/baseStyles';
 
-const Buttons = ({
-  onClick, bgColor, hoverColor, label,
-}) => (
-  <StyledButtons onClick={onClick} bgColor={bgColor} hoverColor={hoverColor}>
+const Buttons = (
+  {
+    onClick,
+    fill,
+    inline,
+    active,
+    label,
+  },
+) => (
+  <StyledButtons onClick={onClick} fill={fill} inline={inline} active={active}>
     { label }
   </StyledButtons>
 );
 
 Buttons.propTypes = {
   onClick: PropTypes.func,
-  bgColor: PropTypes.string,
-  hoverColor: PropTypes.string,
+  fill: PropTypes.string,
+  inline: PropTypes.bool,
+  active: PropTypes.bool,
   label: PropTypes.string,
 };
 
 Buttons.defaultProps = {
   onClick: null,
-  bgColor: color.light,
-  hoverColor: color.dark,
+  fill: '',
+  inline: false,
+  active: false,
   label: 'Кнопка',
 };
 

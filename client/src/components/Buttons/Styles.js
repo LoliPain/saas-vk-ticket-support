@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { minSize, sizeBreakpoints } from '../../assets/baseStyles';
+import { color, minSize, sizeBreakpoints } from '../../assets/baseStyles';
 
 const DesignBased = {
   width: 64,
@@ -11,7 +11,6 @@ const StyledButtons = styled.button`
   font-weight: 500;
   font-family: Inter, sans-serif;
   font-size: ${DesignBased.font}px;
-  color: black;
   cursor: pointer;
   box-sizing: border-box;
   width: ${DesignBased.width}px;
@@ -32,10 +31,11 @@ const StyledButtons = styled.button`
     border-width: 2px;
     border-radius: 6px;
   }
-  border: solid ${(props) => props.hoverColor};
-  background: ${(props) => props.bgColor};
+  color: ${({ active }) => (!active ? 'black' : 'white')};
+  border: solid ${({ fill, inline }) => (inline ? fill || color.dark : color.dark)};
+  background: ${({ fill, active, inline }) => { if (active) { return !inline ? color.dark : fill || color.dark; } if (inline) { return 'transparent'; } return color.light; }};
   &:hover {
-    background: ${(props) => props.hoverColor};
+    background: ${({ inline, fill }) => (!inline ? color.dark : fill || color.dark)};
     color: white;
   }
 `;
