@@ -22,7 +22,7 @@ const StyledStatus = styled.div`
     height: ${DesignBased.statusHeight / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
     border-radius: 4px;
   }
-  background-color: ${(props) => props.status}; 
+  background-color: ${({ status }) => status}; 
 `;
 
 export default StyledStatus;

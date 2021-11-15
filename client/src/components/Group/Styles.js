@@ -36,10 +36,10 @@ export const StyledGroupWrapper = styled.div`
     margin-bottom: ${DesignBased.margin / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
     border-radius: 6px;
   }
-  background-color: ${(props) => (props.selected ? color.light : color.white)};
+  background-color: ${({ selected }) => (selected ? color.light : color.white)};
   :hover{
-    cursor: ${(props) => (!props.selected ? 'pointer' : null)};
-    background-color: ${(props) => (!props.selected ? color.light : null)};
+    cursor: ${({ selected }) => (!selected ? 'pointer' : null)};
+    background-color: ${({ selected }) => (!selected ? color.light : null)};
   }
 `;
 

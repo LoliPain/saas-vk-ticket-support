@@ -9,7 +9,7 @@ const DesignBased = {
 
 export const StyledTicketWrapper = styled.div`
   position: relative;
-  cursor: ${(props) => (props.selected ? 'auto' : 'pointer')};
+  cursor: ${({ selected }) => (selected ? 'auto' : 'pointer')};
   font-family: Inter, sans-serif;
   font-size: ${DesignBased.font}px;
   box-sizing: border-box;
@@ -28,7 +28,7 @@ export const StyledTicketWrapper = styled.div`
     font-size: ${DesignBased.font / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
     border-radius: 6px;
   }
-  background-color: ${(props) => (props.selected ? color.light : color.white)};
+  background-color: ${({ selected }) => (selected ? color.light : color.white)};
   img {
     position: absolute;
     right: 3%;

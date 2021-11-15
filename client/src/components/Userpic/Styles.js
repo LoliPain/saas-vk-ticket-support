@@ -40,5 +40,5 @@ export const StyledPic = styled.img`
     width: ${DesignBased.width / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
     height: ${DesignBased.height / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
   }
-  border: ${(props) => (props.minimal ? `${color.dark} 0.5px solid` : '0')}
+  border: ${({ minimal }) => (minimal ? `${color.dark} 0.5px solid` : '0')}
 `;

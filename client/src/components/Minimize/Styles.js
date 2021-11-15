@@ -35,5 +35,5 @@ export const StyledMinimize = styled.button`
 export const StyledIco = styled(Ico)`
   display: block;
   margin: auto;
-  ${(props) => (props.minimized ? 'transform: rotate(180deg);' : '')}
+  ${({ minimized }) => (minimized ? 'transform: rotate(180deg);' : '')}
 `;

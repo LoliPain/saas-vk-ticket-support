@@ -33,7 +33,7 @@ export const StyledIncrease = styled.div`
 `;
 
 export const StyledDecrease = styled.div`
-  ${(props) => (props.minimal ? `background: ${color.dark};` : 'background: white; cursor: pointer;')}
+  ${({ minimal }) => (minimal ? `background: ${color.dark};` : 'background: white; cursor: pointer;')}
   display: inline-block;
   border: 1px solid black;
   box-sizing: border-box;
