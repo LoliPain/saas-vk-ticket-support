@@ -20,11 +20,23 @@ import { emptyAuthData } from '../../App/store/auth';
 import { supportLink, sourceCodeLink } from '../../App/global';
 import Group from '../../components/Group';
 
-const openUserModal = (mode) => (mode /* TODO open login/logout modal */);
+const openUserModal = (mode, modal) => {
+  if (mode) {
+    modal('logout');
+  } else {
+    modal('auth');
+  }
+};
 
-const User = ({
-  userPicUrl, fullName, userStatusString, userLogged,
-}) => {
+const User = (
+  {
+    userPicUrl,
+    fullName,
+    userStatusString,
+    userLogged,
+    modalControl,
+  },
+) => {
   let fullNameLoc = fullName;
   let userStatusStringLoc = userStatusString;
   if (!userLogged) {
@@ -33,7 +45,10 @@ const User = ({
   }
   return (
     <StyledGCPanelUser>
-      <StyledGCPanelUserPic changeAuth={() => openUserModal(userLogged)} userUrl={userPicUrl} />
+      <StyledGCPanelUserPic
+        changeAuth={() => openUserModal(userLogged, modalControl)}
+        userUrl={userPicUrl}
+      />
       <StyledGCPanelUserData>
         <StyledGCPanelUserName>
           {fullNameLoc}
@@ -110,9 +125,16 @@ const Groups = ({ userGroups, setSelect, selected }) => {
   );
 };
 
-const GCPanel = ({
-  userData, userPicUrl, userStatus, userLogged, groupSelection,
-}) => {
+const GCPanel = (
+  {
+    userData,
+    userPicUrl,
+    userStatus,
+    userLogged,
+    groupSelection,
+    modalControl,
+  },
+) => {
   const { fullName, userGroups } = userData;
   const [minimized, toggleMinimize] = useState(false);
   let userStatusString = 'Подписка неактивна';
@@ -130,6 +152,7 @@ const GCPanel = ({
             userStatusString={userStatusString}
             userPicUrl={userPicUrl}
             fullName={fullName}
+            modalControl={modalControl}
           />
           <Groups
             userGroups={userGroups}
@@ -165,6 +188,7 @@ GCPanel.propTypes = {
     selected: PropTypes.string,
     setSelect: PropTypes.func,
   }).isRequired,
+  modalControl: PropTypes.func.isRequired,
 };
 
 GCPanel.defaultProps = {
@@ -185,10 +209,12 @@ User.propTypes = {
   userPicUrl: PropTypes.string.isRequired,
   userStatusString: PropTypes.string.isRequired,
   userLogged: PropTypes.bool.isRequired,
+  modalControl: PropTypes.func.isRequired,
 };
 
 openUserModal.propTypes = {
   mode: PropTypes.bool.isRequired,
+  modalControl: PropTypes.func.isRequired,
 };
 
 export default GCPanel;

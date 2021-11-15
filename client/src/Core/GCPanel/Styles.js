@@ -42,12 +42,12 @@ export const StyledGCPanelWrapper = styled.div`
   background-color: ${color.light};
   font-family: Inter,sans-serif;
   border: 1px solid ${color.medium};
-  width: ${(props) => (props.minimized ? DesignBased.wrapper.minimalWidth : DesignBased.wrapper.width)}px;
+  width: ${({ minimized }) => (minimized ? DesignBased.wrapper.minimalWidth : DesignBased.wrapper.width)}px;
   @media only screen and ${minSize.laptop}{
-    width: ${(props) => (props.minimized ? DesignBased.wrapper.minimalWidth : DesignBased.wrapper.width) / (sizeBreakpoints.design / sizeBreakpoints.laptop)}px;
+    width: ${({ minimized }) => (minimized ? DesignBased.wrapper.minimalWidth : DesignBased.wrapper.width) / (sizeBreakpoints.design / sizeBreakpoints.laptop)}px;
   }
   @media only screen and ${minSize.desktop}{
-    width: ${(props) => (props.minimized ? DesignBased.wrapper.minimalWidth : DesignBased.wrapper.width) / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
+    width: ${({ minimized }) => (minimized ? DesignBased.wrapper.minimalWidth : DesignBased.wrapper.width) / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
   }
 `;
 
