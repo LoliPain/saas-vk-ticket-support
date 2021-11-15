@@ -16,17 +16,8 @@ import {
   StyledGCPanelUserStatus,
   StyledGCPanelUserPic, StyledGCPanelGroups, StyledGCPanelEmpty, StyledGCPanelEmptyTitle,
 } from './Styles';
-import { emptyAuthData } from '../../App/store/auth';
 import { supportLink, sourceCodeLink } from '../../App/global';
 import Group from '../../components/Group';
-
-const openUserModal = (mode, modal) => {
-  if (mode) {
-    modal('logout');
-  } else {
-    modal('auth');
-  }
-};
 
 const User = (
   {
@@ -46,7 +37,7 @@ const User = (
   return (
     <StyledGCPanelUser>
       <StyledGCPanelUserPic
-        changeAuth={() => openUserModal(userLogged, modalControl)}
+        changeAuth={() => (userLogged ? modalControl('logout') : modalControl('auth'))}
         userUrl={userPicUrl}
       />
       <StyledGCPanelUserData>
@@ -72,7 +63,14 @@ function statusSet(countString) {
   return 'rejected';
 }
 
-const Groups = ({ userGroups, setSelect, selected }) => {
+const Groups = (
+  {
+    userGroups,
+    setSelect,
+    selected,
+    modalControl,
+  },
+) => {
   const groupsComponent = [];
   userGroups.forEach(
     (group) => groupsComponent.push(
@@ -95,7 +93,10 @@ const Groups = ({ userGroups, setSelect, selected }) => {
         </StyledGCPanelTitle>
         <StyledGCPanelContent>
           <StyledGCPanelAbsWrapper>
-            <StyledGCPanelStepper />
+            <StyledGCPanelStepper
+              increase={() => modalControl('newGroup')}
+              decrease={() => modalControl('changeGroup')}
+            />
           </StyledGCPanelAbsWrapper>
           <StyledGCPanelGroups>
             { groupsComponent }
@@ -111,7 +112,10 @@ const Groups = ({ userGroups, setSelect, selected }) => {
       </StyledGCPanelTitle>
       <StyledGCPanelEmpty>
         <StyledGCPanelAbsWrapper>
-          <StyledGCPanelStepper isMinimal />
+          <StyledGCPanelStepper
+            isMinimal
+            increase={() => modalControl('newGroup')}
+          />
         </StyledGCPanelAbsWrapper>
         <StyledGCPanelEmptyTitle>
           Пока что тут пусто,
@@ -158,6 +162,7 @@ const GCPanel = (
             userGroups={userGroups}
             setSelect={groupSelection.setSelect}
             selected={groupSelection.selected}
+            modalControl={modalControl}
           />
           <StyledGCPanelFooter>
             <StyledGCPanelFooterElement target="_blank" rel="noopener noreferrer" href={supportLink}>
@@ -180,10 +185,10 @@ GCPanel.propTypes = {
   userData: PropTypes.shape({
     fullName: PropTypes.string,
     userGroups: PropTypes.arrayOf(PropTypes.object),
-  }),
+  }).isRequired,
   userPicUrl: PropTypes.string,
   userStatus: PropTypes.string,
-  userLogged: PropTypes.bool,
+  userLogged: PropTypes.bool.isRequired,
   groupSelection: PropTypes.shape({
     selected: PropTypes.string,
     setSelect: PropTypes.func,
@@ -192,16 +197,15 @@ GCPanel.propTypes = {
 };
 
 GCPanel.defaultProps = {
-  userData: emptyAuthData.data,
   userPicUrl: '',
   userStatus: '',
-  userLogged: false,
 };
 
 Groups.propTypes = {
   userGroups: PropTypes.arrayOf(PropTypes.object).isRequired,
   setSelect: PropTypes.func.isRequired,
   selected: PropTypes.string.isRequired,
+  modalControl: PropTypes.func.isRequired,
 };
 
 User.propTypes = {
@@ -209,11 +213,6 @@ User.propTypes = {
   userPicUrl: PropTypes.string.isRequired,
   userStatusString: PropTypes.string.isRequired,
   userLogged: PropTypes.bool.isRequired,
-  modalControl: PropTypes.func.isRequired,
-};
-
-openUserModal.propTypes = {
-  mode: PropTypes.bool.isRequired,
   modalControl: PropTypes.func.isRequired,
 };
 
