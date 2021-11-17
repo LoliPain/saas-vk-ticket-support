@@ -8,7 +8,7 @@ const DesignBased = {
   font: 13,
 };
 
-export const StyledDonate = styled.button`
+export const DonateDiv = styled.button`
   font-weight: 400;
   font-family: Inter, sans-serif;
   font-size: ${DesignBased.font}px;
@@ -35,7 +35,7 @@ export const StyledDonate = styled.button`
   }
 `;
 
-export const StyledWrapper = styled.div`
+export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
@@ -43,7 +43,7 @@ export const StyledWrapper = styled.div`
   margin-right: auto;
 `;
 
-export const StyledIco = styled(Ico)`
+export const IcoWrapper = styled(Ico)`
   display: inline-flex;
   height: 16px;
   padding-right: 4px;

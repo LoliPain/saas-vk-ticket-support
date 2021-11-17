@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { authTyping } from '../App/store/auth';
-import GCPanel from './GCPanel';
+import GroupControlPanel from './GroupControlPanel';
 import LogoutModal from './LogoutModal';
 import GroupModal from './GroupModal';
 import AuthModal from './AuthModal';
@@ -27,7 +27,7 @@ const Core = ({ authData }) => {
   return (
     <>
       <Modal instance={modal} modalControl={modalControl} group={selected} />
-      <GCPanel
+      <GroupControlPanel
         userData={authData.data}
         groupSelection={{ selected, setSelect }}
         modalControl={modalControl}

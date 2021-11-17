@@ -6,7 +6,7 @@ import {
   LogoutModalFooter,
   LogoutModalTitle,
 } from './Styles';
-import Buttons from '../../components/Buttons';
+import AnyButton from '../../components/AnyButton';
 import { color } from '../../assets/baseStyles';
 import { removeAuthData } from '../../App/store/auth';
 
@@ -23,8 +23,8 @@ const LogoutModal = ({ modalControl }) => (
         Подтвердите выход из аккаунта
       </LogoutModalTitle>
       <LogoutModalFooter>
-        <Buttons inline label="Отмена" onClick={() => modalControl('')} />
-        <Buttons inline fill={color.rejected} label="Выйти" onClick={() => LogoutAction(modalControl)} />
+        <AnyButton inline label="Отмена" onClick={() => modalControl('')} />
+        <AnyButton inline fill={color.rejected} label="Выйти" onClick={() => LogoutAction(modalControl)} />
       </LogoutModalFooter>
     </LogoutModalBox>
   </LogoutModalBG>

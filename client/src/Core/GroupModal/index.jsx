@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/*
+const BaseModal = ({ groupData }) => {
+
+};
+*/
 const GroupModal = ({ group }) => {
   if (group) {
     return (
@@ -14,6 +19,7 @@ const GroupModal = ({ group }) => {
 };
 
 GroupModal.propTypes = {
+  /* modalControl: PropTypes.func.isRequired, */
   group: PropTypes.string,
 };
 

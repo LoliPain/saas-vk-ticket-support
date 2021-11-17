@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyledIncrease, StyledPlus, StyledDecrease, StyledMinus, StyledStepper,
+  Increase, PlusInline, Decrease, MinusInline, StepperWrapper,
 } from './Styles';
 
 const Stepper = ({
@@ -10,14 +10,14 @@ const Stepper = ({
   decrease,
   className,
 }) => (
-  <StyledStepper className={className}>
-    <StyledIncrease onClick={() => increase()}>
-      <StyledPlus viewBox="0 0 20 14" />
-    </StyledIncrease>
-    <StyledDecrease onClick={!isMinimal ? () => decrease() : undefined} minimal={+isMinimal}>
-      <StyledMinus viewBox="0 0 20 14" />
-    </StyledDecrease>
-  </StyledStepper>
+  <StepperWrapper className={className}>
+    <Increase onClick={() => increase()}>
+      <PlusInline viewBox="0 0 20 14" />
+    </Increase>
+    <Decrease onClick={!isMinimal ? () => decrease() : undefined} minimal={+isMinimal}>
+      <MinusInline viewBox="0 0 20 14" />
+    </Decrease>
+  </StepperWrapper>
 );
 
 Stepper.propTypes = {

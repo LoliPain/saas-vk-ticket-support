@@ -8,7 +8,7 @@ const DesignBased = {
   height: 14,
 };
 
-export const StyledIncrease = styled.div`
+export const Increase = styled.div`
   display: inline-block;
   cursor: pointer;
   border: 1px solid black;
@@ -32,7 +32,7 @@ export const StyledIncrease = styled.div`
   }
 `;
 
-export const StyledDecrease = styled.div`
+export const Decrease = styled.div`
   ${({ minimal }) => (minimal ? `background: ${color.dark};` : 'background: white; cursor: pointer;')}
   display: inline-block;
   border: 1px solid black;
@@ -56,16 +56,16 @@ export const StyledDecrease = styled.div`
   }
 `;
 
-export const StyledStepper = styled.div`
+export const StepperWrapper = styled.div`
   display: inline-block;
 `;
 
-export const StyledPlus = styled(Plus)`
+export const PlusInline = styled(Plus)`
   display: block;
   margin: auto;
 `;
 
-export const StyledMinus = styled(Minus)`
+export const MinusInline = styled(Minus)`
   display: block;
   margin: auto;
 `;

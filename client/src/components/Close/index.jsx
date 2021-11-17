@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledClose, StyledIco } from './Styles';
+import { CloseWrapper, IcoWrapper } from './Styles';
 
 const Close = ({ onClick }) => (
-  <StyledClose onClick={onClick}>
-    <StyledIco viewBox="0 0 20 20" />
-  </StyledClose>
+  <CloseWrapper onClick={onClick}>
+    <IcoWrapper viewBox="0 0 20 20" />
+  </CloseWrapper>
 );
 
 Close.propTypes = {

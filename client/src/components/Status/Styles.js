@@ -6,7 +6,7 @@ const DesignBased = {
   statusHeight: 8,
 };
 
-const StyledStatus = styled.div`
+const StatusDiv = styled.div`
   top: 6%;
   left: 3%;
   position: absolute;
@@ -25,4 +25,4 @@ const StyledStatus = styled.div`
   background-color: ${({ status }) => status}; 
 `;
 
-export default StyledStatus;
+export default StatusDiv;

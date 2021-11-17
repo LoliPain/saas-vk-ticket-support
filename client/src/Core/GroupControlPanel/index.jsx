@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyledGCPanel,
-  StyledGCPanelFooter,
-  StyledGCPanelFooterElement,
-  StyledGCPanelUser,
-  StyledGCPanelWrapper,
-  StyledGCPanelMinimize,
-  StyledGCPanelContent,
-  StyledGCPanelStepper,
-  StyledGCPanelTitle,
-  StyledGCPanelAbsWrapper,
-  StyledGCPanelUserData,
-  StyledGCPanelUserName,
-  StyledGCPanelUserStatus,
-  StyledGCPanelUserPic, StyledGCPanelGroups, StyledGCPanelEmpty, StyledGCPanelEmptyTitle,
+  GCPanel,
+  GCPanelFooter,
+  GCPanelFooterElement,
+  GCPanelUser,
+  GCPanelWrapper,
+  GCPanelMinimize,
+  GCPanelContent,
+  GCPanelStepper,
+  GCPanelTitle,
+  GCPanelAbsWrapper,
+  GCPanelUserData,
+  GCPanelUserName,
+  GCPanelUserStatus,
+  GCPanelUserPic, GCPanelGroups, GCPanelEmpty, GCPanelEmptyTitle,
 } from './Styles';
 import { supportLink, sourceCodeLink } from '../../App/global';
 import Group from '../../components/Group';
@@ -35,20 +35,20 @@ const User = (
     userStatusStringLoc = 'Войдите чтобы воспользоваться сервисом';
   }
   return (
-    <StyledGCPanelUser>
-      <StyledGCPanelUserPic
+    <GCPanelUser>
+      <GCPanelUserPic
         changeAuth={() => (userLogged ? modalControl('logout') : modalControl('auth'))}
         userUrl={userPicUrl}
       />
-      <StyledGCPanelUserData>
-        <StyledGCPanelUserName>
+      <GCPanelUserData>
+        <GCPanelUserName>
           {fullNameLoc}
-        </StyledGCPanelUserName>
-        <StyledGCPanelUserStatus>
+        </GCPanelUserName>
+        <GCPanelUserStatus>
           {userStatusStringLoc}
-        </StyledGCPanelUserStatus>
-      </StyledGCPanelUserData>
-    </StyledGCPanelUser>
+        </GCPanelUserStatus>
+      </GCPanelUserData>
+    </GCPanelUser>
   );
 };
 
@@ -88,49 +88,49 @@ const Groups = (
   );
   if (userGroups.length) {
     return (
-      <StyledGCPanel>
-        <StyledGCPanelTitle>
+      <GCPanel>
+        <GCPanelTitle>
           Группы
-        </StyledGCPanelTitle>
-        <StyledGCPanelContent>
-          <StyledGCPanelAbsWrapper>
-            <StyledGCPanelStepper
+        </GCPanelTitle>
+        <GCPanelContent>
+          <GCPanelAbsWrapper>
+            <GCPanelStepper
               increase={() => modalControl('newGroup')}
               decrease={() => modalControl('changeGroup')}
             />
-          </StyledGCPanelAbsWrapper>
-          <StyledGCPanelGroups>
+          </GCPanelAbsWrapper>
+          <GCPanelGroups>
             { groupsComponent }
-          </StyledGCPanelGroups>
-        </StyledGCPanelContent>
-      </StyledGCPanel>
+          </GCPanelGroups>
+        </GCPanelContent>
+      </GCPanel>
     );
   }
   return (
-    <StyledGCPanel>
-      <StyledGCPanelTitle>
+    <GCPanel>
+      <GCPanelTitle>
         Группы
-      </StyledGCPanelTitle>
-      <StyledGCPanelEmpty>
-        <StyledGCPanelAbsWrapper>
-          <StyledGCPanelStepper
+      </GCPanelTitle>
+      <GCPanelEmpty>
+        <GCPanelAbsWrapper>
+          <GCPanelStepper
             isMinimal
             increase={() => (userLogged ? modalControl('newGroup') : modalControl('auth'))}
           />
-        </StyledGCPanelAbsWrapper>
-        <StyledGCPanelEmptyTitle>
+        </GCPanelAbsWrapper>
+        <GCPanelEmptyTitle>
           Пока что тут пусто,
           <br />
           добавьте новую группу
           <br />
           и начните работу
-        </StyledGCPanelEmptyTitle>
-      </StyledGCPanelEmpty>
-    </StyledGCPanel>
+        </GCPanelEmptyTitle>
+      </GCPanelEmpty>
+    </GCPanel>
   );
 };
 
-const GCPanel = (
+const GroupControlPanel = (
   {
     userData,
     userPicUrl,
@@ -148,8 +148,8 @@ const GCPanel = (
   }
   const minimize = () => (toggleMinimize(!minimized));
   return (
-    <StyledGCPanelWrapper minimized={minimized}>
-      <StyledGCPanelMinimize updateStatus={minimize} status={minimized} />
+    <GCPanelWrapper minimized={minimized}>
+      <GCPanelMinimize updateStatus={minimize} status={minimized} />
       {!minimized ? (
         <>
           <User
@@ -166,24 +166,24 @@ const GCPanel = (
             modalControl={modalControl}
             userLogged={userLogged}
           />
-          <StyledGCPanelFooter>
-            <StyledGCPanelFooterElement target="_blank" rel="noopener noreferrer" href={supportLink}>
+          <GCPanelFooter>
+            <GCPanelFooterElement target="_blank" rel="noopener noreferrer" href={supportLink}>
               Помощь
-            </StyledGCPanelFooterElement>
-            <StyledGCPanelFooterElement target="_blank" rel="noopener noreferrer" href={sourceCodeLink}>
+            </GCPanelFooterElement>
+            <GCPanelFooterElement target="_blank" rel="noopener noreferrer" href={sourceCodeLink}>
               Исходный код
-            </StyledGCPanelFooterElement>
-          </StyledGCPanelFooter>
+            </GCPanelFooterElement>
+          </GCPanelFooter>
         </>
       ) : (
         <>
         </>
       )}
-    </StyledGCPanelWrapper>
+    </GCPanelWrapper>
   );
 };
 
-GCPanel.propTypes = {
+GroupControlPanel.propTypes = {
   userData: PropTypes.shape({
     fullName: PropTypes.string,
     userGroups: PropTypes.arrayOf(PropTypes.object),
@@ -198,7 +198,7 @@ GCPanel.propTypes = {
   modalControl: PropTypes.func.isRequired,
 };
 
-GCPanel.defaultProps = {
+GroupControlPanel.defaultProps = {
   userPicUrl: '',
   userStatus: '',
 };
@@ -219,4 +219,4 @@ User.propTypes = {
   modalControl: PropTypes.func.isRequired,
 };
 
-export default GCPanel;
+export default GroupControlPanel;

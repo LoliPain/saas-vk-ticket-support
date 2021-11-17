@@ -7,7 +7,7 @@ const DesignBased = {
   height: 20,
 };
 
-export const StyledMinimize = styled.button`
+export const MinimizeDiv = styled.button`
   cursor: pointer;
   border: 1px solid ${color.dark};
   box-sizing: border-box;
@@ -32,7 +32,7 @@ export const StyledMinimize = styled.button`
   }
 `;
 
-export const StyledIco = styled(Ico)`
+export const IcoWrapper = styled(Ico)`
   display: block;
   margin: auto;
   ${({ minimized }) => (minimized ? 'transform: rotate(180deg);' : '')}

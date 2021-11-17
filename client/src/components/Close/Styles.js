@@ -7,7 +7,7 @@ const DesignBased = {
   height: 20,
 };
 
-export const StyledClose = styled.button`
+export const CloseWrapper = styled.button`
   cursor: pointer;
   border: 1px solid ${color.medium};
   path {
@@ -40,7 +40,7 @@ export const StyledClose = styled.button`
   }
 `;
 
-export const StyledIco = styled(Ico)`
+export const IcoWrapper = styled(Ico)`
   display: block;
   margin: auto;
 `;

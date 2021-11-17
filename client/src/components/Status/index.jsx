@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { color } from '../../assets/baseStyles';
-import StyledStatus from './Styles';
+import StatusDiv from './Styles';
 
 const statusColor = {
   disabled: color.disabled,
@@ -14,7 +14,7 @@ const statusColor = {
 };
 
 const Status = ({ status }) => (
-  <StyledStatus status={statusColor[status]} />
+  <StatusDiv status={statusColor[status]} />
 );
 
 Status.propTypes = {

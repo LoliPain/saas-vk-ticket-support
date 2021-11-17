@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledDonate, StyledIco, StyledWrapper } from './Styles';
+import { DonateDiv, IcoWrapper, Wrapper } from './Styles';
 
 const Donate = ({ onClick }) => (
-  <StyledDonate onClick={onClick}>
-    <StyledWrapper>
-      <StyledIco viewBox="0 0 16 16" />
+  <DonateDiv onClick={onClick}>
+    <Wrapper>
+      <IcoWrapper viewBox="0 0 16 16" />
       Поддержать
-    </StyledWrapper>
-  </StyledDonate>
+    </Wrapper>
+  </DonateDiv>
 );
 
 Donate.propTypes = {

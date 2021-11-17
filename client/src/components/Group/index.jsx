@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyledGroupCounter, StyledGroupWrapper, StyledDragBar, StyledGroupName,
-  StyledError,
+  GroupCounter, GroupWrapper, DragBar, GroupName,
+  Error,
 } from './Styles';
 import Status from '../Status';
 
 const Group = ({
   status, count, selected, groupName, errorDesc, select,
 }) => (
-  <StyledGroupWrapper selected={+selected} onClick={select}>
+  <GroupWrapper selected={+selected} onClick={select}>
     <Status status={status} />
-    <StyledGroupCounter>
+    <GroupCounter>
       {count}
-    </StyledGroupCounter>
-    <StyledGroupName>{groupName}</StyledGroupName>
-    <StyledError>{errorDesc}</StyledError>
-    <StyledDragBar />
-  </StyledGroupWrapper>
+    </GroupCounter>
+    <GroupName>{groupName}</GroupName>
+    <Error>{errorDesc}</Error>
+    <DragBar />
+  </GroupWrapper>
 );
 
 Group.propTypes = {

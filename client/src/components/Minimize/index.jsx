@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledMinimize, StyledIco } from './Styles';
+import { IcoWrapper, MinimizeDiv } from './Styles';
 
 const Minimize = ({ updateStatus, status, className }) => (
-  <StyledMinimize onClick={() => updateStatus()} className={className}>
-    <StyledIco minimized={+status} viewBox="0 0 20 20" />
-  </StyledMinimize>
+  <MinimizeDiv onClick={() => updateStatus()} className={className}>
+    <IcoWrapper minimized={+status} viewBox="0 0 20 20" />
+  </MinimizeDiv>
 );
 
 Minimize.propTypes = {

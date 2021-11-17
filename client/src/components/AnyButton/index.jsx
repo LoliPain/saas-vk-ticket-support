@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledButtons from './Styles';
+import Buttons from './Styles';
 
-const Buttons = (
+const AnyButton = (
   {
     onClick,
     fill,
@@ -11,12 +11,12 @@ const Buttons = (
     label,
   },
 ) => (
-  <StyledButtons onClick={onClick} fill={fill} inline={inline} active={active}>
+  <Buttons onClick={onClick} fill={fill} inline={inline} active={active}>
     { label }
-  </StyledButtons>
+  </Buttons>
 );
 
-Buttons.propTypes = {
+AnyButton.propTypes = {
   onClick: PropTypes.func,
   fill: PropTypes.string,
   inline: PropTypes.bool,
@@ -24,7 +24,7 @@ Buttons.propTypes = {
   label: PropTypes.string,
 };
 
-Buttons.defaultProps = {
+AnyButton.defaultProps = {
   onClick: null,
   fill: '',
   inline: false,
@@ -32,4 +32,4 @@ Buttons.defaultProps = {
   label: 'Кнопка',
 };
 
-export default Buttons;
+export default AnyButton;

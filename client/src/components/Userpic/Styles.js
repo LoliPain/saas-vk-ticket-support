@@ -6,7 +6,7 @@ const DesignBased = {
   height: 22,
 };
 
-export const StyledPicWrapper = styled.div`
+export const PicWrapper = styled.div`
   border-radius: 50%;
   border: 1px solid white;
   margin: 1px;
@@ -28,7 +28,7 @@ export const StyledPicWrapper = styled.div`
   }
 `;
 
-export const StyledPic = styled.img`
+export const Pic = styled.img`
   border-radius: 50%;
   width: ${DesignBased.width}px;
   height: ${DesignBased.height}px;

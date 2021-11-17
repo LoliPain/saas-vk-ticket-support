@@ -33,7 +33,7 @@ const DesignBased = {
   },
 };
 
-export const StyledGCPanelWrapper = styled.div`
+export const GCPanelWrapper = styled.div`
   position: fixed;
   height: 100%;
   top: 0;
@@ -51,13 +51,13 @@ export const StyledGCPanelWrapper = styled.div`
   }
 `;
 
-export const StyledGCPanelMinimize = styled(Minimize)`
+export const GCPanelMinimize = styled(Minimize)`
   position: absolute;
   top: 5px;
   right: 5px;
 `;
 
-export const StyledGCPanelUser = styled.div`
+export const GCPanelUser = styled.div`
   position: relative;
   width: max-content;
   margin-left: ${3 * DesignBased.user.margin}px;
@@ -72,7 +72,7 @@ export const StyledGCPanelUser = styled.div`
   }
 `;
 
-export const StyledGCPanelUserData = styled.div`
+export const GCPanelUserData = styled.div`
   min-width: max-content;
   display: inline-block;
   position: absolute;
@@ -86,11 +86,11 @@ export const StyledGCPanelUserData = styled.div`
   }
 `;
 
-export const StyledGCPanelUserPic = styled(UserPic)`
+export const GCPanelUserPic = styled(UserPic)`
   display: inline-block;
 `;
 
-export const StyledGCPanelUserName = styled.span`
+export const GCPanelUserName = styled.span`
   font-weight: 500;
   display: block;
   font-size: ${DesignBased.user.name}px;
@@ -102,7 +102,7 @@ export const StyledGCPanelUserName = styled.span`
   }
 `;
 
-export const StyledGCPanelUserStatus = styled.span`
+export const GCPanelUserStatus = styled.span`
   font-weight: 200;
   display: block;
   font-size: ${DesignBased.user.status}px;
@@ -114,7 +114,7 @@ export const StyledGCPanelUserStatus = styled.span`
   }
 `;
 
-export const StyledGCPanel = styled.div`
+export const GCPanel = styled.div`
   font-weight: 500;
   font-size: ${DesignBased.groups.fontTitle};
   margin-top: ${DesignBased.groups.margin}px;
@@ -128,7 +128,7 @@ export const StyledGCPanel = styled.div`
   }
 `;
 
-export const StyledGCPanelTitle = styled.span`
+export const GCPanelTitle = styled.span`
   font-weight: 500;
   font-size: ${DesignBased.groups.fontTitle}px;
   margin-left: ${DesignBased.groups.pTitle}px;
@@ -142,7 +142,7 @@ export const StyledGCPanelTitle = styled.span`
   }
 `;
 
-export const StyledGCPanelContent = styled.div`
+export const GCPanelContent = styled.div`
   background-color: white;
   border-radius: 3px;
   margin-right: auto;
@@ -163,14 +163,14 @@ export const StyledGCPanelContent = styled.div`
   }
 `;
 
-export const StyledGCPanelEmpty = styled(StyledGCPanelContent)`
+export const GCPanelEmpty = styled(GCPanelContent)`
   background-image: url(${StepperArrow});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 `;
 
-export const StyledGCPanelEmptyTitle = styled.div`
+export const GCPanelEmptyTitle = styled.div`
   height: 100%;
   text-align: center;
   font-weight: 400;
@@ -192,7 +192,7 @@ export const StyledGCPanelEmptyTitle = styled.div`
   }
 `;
 
-export const StyledGCPanelGroups = styled.div`
+export const GCPanelGroups = styled.div`
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -205,24 +205,24 @@ export const StyledGCPanelGroups = styled.div`
   }
 `;
 
-export const StyledGCPanelAbsWrapper = styled.div`
+export const GCPanelAbsWrapper = styled.div`
   position: relative;
 `;
 
-export const StyledGCPanelStepper = styled(Stepper)`
+export const GCPanelStepper = styled(Stepper)`
   position: absolute;
   top: 5px;
   right: 5px;
 `;
 
-export const StyledGCPanelFooter = styled.div`
+export const GCPanelFooter = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
 `;
 
-export const StyledGCPanelFooterElement = styled.a`
+export const GCPanelFooterElement = styled.a`
   font-weight: 500;
   text-decoration: none;
   display: block;

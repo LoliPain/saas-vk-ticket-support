@@ -7,7 +7,7 @@ const DesignBased = {
   font: 10,
 };
 
-const StyledButtons = styled.button`
+const Buttons = styled.button`
   font-weight: 500;
   font-family: Inter, sans-serif;
   font-size: ${DesignBased.font}px;
@@ -40,4 +40,4 @@ const StyledButtons = styled.button`
   }
 `;
 
-export default StyledButtons;
+export default Buttons;

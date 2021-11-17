@@ -11,7 +11,7 @@ const DesignBased = {
   margin: 10,
 };
 
-export const StyledGroupWrapper = styled.div`
+export const GroupWrapper = styled.div`
   position: relative;
   font-weight: 300;
   font-family: Inter, sans-serif;
@@ -43,7 +43,7 @@ export const StyledGroupWrapper = styled.div`
   }
 `;
 
-export const StyledGroupCounter = styled.div`
+export const GroupCounter = styled.div`
   position: absolute;
   top: 6%;
   right: 3%;
@@ -70,7 +70,7 @@ export const StyledGroupCounter = styled.div`
   }
 `;
 
-export const StyledDragBar = styled.div`
+export const DragBar = styled.div`
   position: absolute;
   width: 80%;
   height: 3px;
@@ -82,7 +82,7 @@ export const StyledDragBar = styled.div`
   transform: translateX(-50%)
 `;
 
-export const StyledGroupName = styled.span`
+export const GroupName = styled.span`
   position: absolute;
   top: 24%;
   left: 5%;
@@ -93,7 +93,7 @@ export const StyledGroupName = styled.span`
   color: black;
 `;
 
-export const StyledError = styled.span`
+export const Error = styled.span`
   position: absolute;
   bottom: 12%;
   font-weight: 200;

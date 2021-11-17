@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyledTicketCode, StyledTicketPreview, StyledTicketWrapper,
+  TicketCode, TicketPreview, TicketWrapper,
 } from './Styles';
 import Status from '../Status';
 import { MinimalUserPic } from '../Userpic';
@@ -9,16 +9,16 @@ import { MinimalUserPic } from '../Userpic';
 const Ticket = ({
   status, preview, code, user, selected,
 }) => (
-  <StyledTicketWrapper selected={+selected}>
+  <TicketWrapper selected={+selected}>
     <Status status={status} />
-    <StyledTicketPreview>
+    <TicketPreview>
       {preview}
-    </StyledTicketPreview>
-    <StyledTicketCode>
+    </TicketPreview>
+    <TicketCode>
       {code}
-    </StyledTicketCode>
+    </TicketCode>
     <MinimalUserPic userUrl={user} size="0.7" />
-  </StyledTicketWrapper>
+  </TicketWrapper>
 );
 
 Ticket.propTypes = {

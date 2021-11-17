@@ -7,7 +7,7 @@ const DesignBased = {
   font: 7,
 };
 
-export const StyledTicketWrapper = styled.div`
+export const TicketWrapper = styled.div`
   position: relative;
   cursor: ${({ selected }) => (selected ? 'auto' : 'pointer')};
   font-family: Inter, sans-serif;
@@ -39,7 +39,7 @@ export const StyledTicketWrapper = styled.div`
   }
 `;
 
-export const StyledTicketPreview = styled.span`
+export const TicketPreview = styled.span`
   position: absolute;
   font-weight: 300;
   top: 24%;
@@ -54,7 +54,7 @@ export const StyledTicketPreview = styled.span`
   color: black;
 `;
 
-export const StyledTicketCode = styled.span`
+export const TicketCode = styled.span`
   position: absolute;
   bottom: 6%;
   left: 5%;

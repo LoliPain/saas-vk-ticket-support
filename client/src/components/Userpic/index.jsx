@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledPicWrapper, StyledPic } from './Styles';
+import { PicWrapper, Pic } from './Styles';
 import DefaultUser from '../../assets/User.png';
 
 export const UserPic = ({ userUrl, className, changeAuth }) => (
-  <StyledPicWrapper className={className} onClick={changeAuth}>
-    <StyledPic src={userUrl || DefaultUser} />
-  </StyledPicWrapper>
+  <PicWrapper className={className} onClick={changeAuth}>
+    <Pic src={userUrl || DefaultUser} />
+  </PicWrapper>
 );
 
 export const MinimalUserPic = ({ userUrl, size }) => (
-  <StyledPic src={userUrl || DefaultUser} style={{ transform: `scale(${size})` }} minimal />
+  <Pic src={userUrl || DefaultUser} style={{ transform: `scale(${size})` }} minimal />
 );
 
 UserPic.propTypes = {
