@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  LogoutModalBG,
   LogoutModalBox,
   LogoutModalFooter,
   LogoutModalTitle,
 } from './Styles';
 import AnyButton from '../../components/AnyButton';
-import { color } from '../../assets/baseStyles';
+import { BaseModalBG, color } from '../../assets/baseStyles';
 import { removeAuthData } from '../../App/store/auth';
 
 const LogoutAction = (modalControl) => {
@@ -17,7 +16,7 @@ const LogoutAction = (modalControl) => {
 };
 
 const LogoutModal = ({ modalControl }) => (
-  <LogoutModalBG>
+  <BaseModalBG>
     <LogoutModalBox>
       <LogoutModalTitle>
         Подтвердите выход из аккаунта
@@ -27,7 +26,7 @@ const LogoutModal = ({ modalControl }) => (
         <AnyButton inline fill={color.rejected} label="Выйти" onClick={() => LogoutAction(modalControl)} />
       </LogoutModalFooter>
     </LogoutModalBox>
-  </LogoutModalBG>
+  </BaseModalBG>
 );
 
 LogoutModal.propTypes = {

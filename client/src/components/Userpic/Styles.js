@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, minSize, sizeBreakpoints } from '../../assets/baseStyles';
+import { minSize, sizeBreakpoints } from '../../assets/baseStyles';
 
 const DesignBased = {
   width: 22,
@@ -40,5 +40,4 @@ export const Pic = styled.img`
     width: ${DesignBased.width / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
     height: ${DesignBased.height / (sizeBreakpoints.design / sizeBreakpoints.desktop)}px;
   }
-  border: ${({ minimal }) => (minimal ? `${color.dark} 0.5px solid` : '0')}
 `;

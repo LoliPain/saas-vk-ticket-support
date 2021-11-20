@@ -11,7 +11,7 @@ const Buttons = styled.button`
   font-weight: 500;
   font-family: Inter, sans-serif;
   font-size: ${DesignBased.font}px;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
   box-sizing: border-box;
   width: ${DesignBased.width}px;
   height: ${DesignBased.height}px;

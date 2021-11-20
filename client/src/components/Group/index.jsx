@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  GroupCounter, GroupWrapper, DragBar, GroupName,
+  GroupCounter,
+  GroupWrapper,
+  DragBar,
+  GroupName,
   Error,
 } from './Styles';
 import Status from '../Status';

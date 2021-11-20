@@ -8,10 +8,17 @@ const AnyButton = (
     fill,
     inline,
     active,
+    disabled,
     label,
   },
 ) => (
-  <Buttons onClick={onClick} fill={fill} inline={inline} active={active}>
+  <Buttons
+    onClick={onClick}
+    fill={fill}
+    inline={inline}
+    active={active || disabled}
+    disabled={disabled}
+  >
     { label }
   </Buttons>
 );
@@ -21,6 +28,7 @@ AnyButton.propTypes = {
   fill: PropTypes.string,
   inline: PropTypes.bool,
   active: PropTypes.bool,
+  disabled: PropTypes.bool,
   label: PropTypes.string,
 };
 
@@ -29,6 +37,7 @@ AnyButton.defaultProps = {
   fill: '',
   inline: false,
   active: false,
+  disabled: false,
   label: 'Кнопка',
 };
 

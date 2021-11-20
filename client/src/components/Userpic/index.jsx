@@ -10,7 +10,7 @@ export const UserPic = ({ userUrl, className, changeAuth }) => (
 );
 
 export const MinimalUserPic = ({ userUrl, size }) => (
-  <Pic src={userUrl || DefaultUser} style={{ transform: `scale(${size})` }} minimal />
+  <Pic src={userUrl || DefaultUser} style={{ transform: `scale(${size})` }} />
 );
 
 UserPic.propTypes = {
