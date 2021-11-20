@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { authTyping } from '../App/store/auth';
 import GroupControlPanel from './GroupControlPanel';
@@ -24,6 +24,17 @@ const Modal = ({ instance, modalControl, group }) => {
 const Core = ({ authData }) => {
   const [selected, setSelect] = useState('');
   const [modal, modalControl] = useState('');
+  const closeKeyModal = useCallback((event) => {
+    if (event.keyCode === 27) {
+      modalControl('');
+    }
+  }, []);
+  useEffect(() => {
+    document.addEventListener('keydown', closeKeyModal, false);
+    return () => {
+      document.removeEventListener('keydown', closeKeyModal, false);
+    };
+  });
   return (
     <>
       <Modal instance={modal} modalControl={modalControl} group={selected} />
