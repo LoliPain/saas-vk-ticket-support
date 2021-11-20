@@ -96,7 +96,8 @@ const Groups = (
           <GCPanelAbsWrapper>
             <GCPanelStepper
               increase={() => modalControl('newGroup')}
-              decrease={() => modalControl('changeGroup')}
+              decrease={() => (selected ? modalControl('changeGroup') : undefined)}
+              isMinimal={!selected}
             />
           </GCPanelAbsWrapper>
           <GCPanelGroups>
