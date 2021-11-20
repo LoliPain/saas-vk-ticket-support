@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { oneOfType } from 'prop-types';
 import { authTyping } from '../App/store/auth';
 import GroupControlPanel from './GroupControlPanel';
 import LogoutModal from './LogoutModal';
 import GroupModal from './GroupModal';
 import AuthModal from './AuthModal';
+import { emptyGroupData } from '../App/global';
 
 const Modal = ({ instance, modalControl, group }) => {
   switch (instance) {
@@ -13,9 +14,23 @@ const Modal = ({ instance, modalControl, group }) => {
     case 'logout':
       return <LogoutModal modalControl={modalControl} />;
     case 'newGroup':
-      return <GroupModal modalControl={modalControl} />;
+      return <GroupModal modalControl={modalControl} groupData={emptyGroupData} />;
     case 'changeGroup':
-      return <GroupModal modalControl={modalControl} group={group} />;
+      // TODO Retrieve data about group by it name from API and unpack it into `groupData`
+      return (
+        <GroupModal
+          modalControl={modalControl}
+          groupData={{
+            data: {
+              name: group.groupName,
+              previewUrl: '',
+              token: 'Example token',
+            },
+            err: Number.isNaN(parseInt(group.count, 10)) ? group.count : '',
+            desc: !Number.isNaN(parseInt(group.count, 10)) ? 'Успешная авторизация, доступ к сообщениям' : '',
+          }}
+        />
+      );
     default:
       return null;
   }
@@ -55,7 +70,13 @@ Core.propTypes = {
 Modal.propTypes = {
   instance: PropTypes.string.isRequired,
   modalControl: PropTypes.func.isRequired,
-  group: PropTypes.string.isRequired,
+  group: oneOfType([
+    PropTypes.shape({
+      groupName: PropTypes.string,
+      count: PropTypes.string,
+    }),
+    PropTypes.string,
+  ]).isRequired,
 };
 
 export default Core;

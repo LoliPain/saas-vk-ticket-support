@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import {
-  minSize, sizeBreakpoints, zIndex, color,
+  minSize,
+  sizeBreakpoints,
+  zIndex,
+  color,
 } from '../../assets/baseStyles';
 import Minimize from '../../components/Minimize';
 import Stepper from '../../components/Stepper';

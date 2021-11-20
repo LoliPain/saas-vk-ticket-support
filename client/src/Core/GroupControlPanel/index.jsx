@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { oneOfType } from 'prop-types';
 import {
   GCPanel,
   GCPanelFooter,
@@ -80,8 +80,8 @@ const Groups = (
         groupName={group.groupName}
         status={statusSet(group.count)}
         count={!Number.isNaN(parseInt(group.count, 10)) ? group.count : '!'}
-        selected={selected === group.groupName}
-        select={() => setSelect(group.groupName)}
+        selected={selected.groupName === group.groupName}
+        select={() => setSelect(group)}
         errorDesc={Number.isNaN(parseInt(group.count, 10)) ? group.count : ''}
       />,
     ),
@@ -193,7 +193,13 @@ GroupControlPanel.propTypes = {
   userStatus: PropTypes.string,
   userLogged: PropTypes.bool.isRequired,
   groupSelection: PropTypes.shape({
-    selected: PropTypes.string,
+    selected: oneOfType([
+      PropTypes.shape({
+        groupName: PropTypes.string,
+        count: PropTypes.string,
+      }),
+      PropTypes.string,
+    ]),
     setSelect: PropTypes.func,
   }).isRequired,
   modalControl: PropTypes.func.isRequired,
@@ -207,7 +213,13 @@ GroupControlPanel.defaultProps = {
 Groups.propTypes = {
   userGroups: PropTypes.arrayOf(PropTypes.object).isRequired,
   setSelect: PropTypes.func.isRequired,
-  selected: PropTypes.string.isRequired,
+  selected: oneOfType([
+    PropTypes.shape({
+      groupName: PropTypes.string,
+      count: PropTypes.string,
+    }),
+    PropTypes.string,
+  ]).isRequired,
   modalControl: PropTypes.func.isRequired,
   userLogged: PropTypes.bool.isRequired,
 };
