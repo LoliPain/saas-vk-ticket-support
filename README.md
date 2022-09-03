@@ -3,7 +3,7 @@
 </p>
 
 # u!Support
-[![Trello](https://img.shields.io/badge/Kanban-Trello-blue)](https://trello.com/b/JeoW7mcJ/ticket-support)
+[![Trello](https://img.shields.io/badge/Kanban-Trello-blue)](https://trello.com/b/uijE6Hqm/usupport)
 [![Mock-up](https://img.shields.io/badge/Deisgn-Figma-blueviolet)](https://www.figma.com/community/file/1035478821080046624/u!Support-Frontend-mock-ups)
 
 The source of [u!Support](https://github.com/P2LOVE/saas-vk-ticket-support) service that can receive and manage support tickets from your clients through [VK](https://vk.com/).
